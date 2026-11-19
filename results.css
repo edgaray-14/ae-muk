@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #222222;
+  --green: #1e7e34;
+  --maroon: #7a1f1f;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: #ffffff;
+  line-height: 1.5;
+}
+
+/* ===== HEADER ===== */
+header h1 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--maroon);
+  margin-top: 24px;
+}
+
+header h2 {
+  text-align: center;
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  font-weight: 500;
+  margin: 4px 16px 20px;
+}
+
+/* Metadata bar */
+.meta-bar {
+  background: #EEEEEE;
+  text-align: center;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  border-top: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.meta-bar .divider {
+  margin: 0 14px;
+  color: #888888;
+}
+
+/* ===== TABLE ===== */
+main {
+  max-width: 1000px;
+  margin: 32px auto 48px;
+  padding: 0 16px;
+}
+
+.table-wrap {
+  overflow-x: auto; /* table scrolls inside itself on small screens */
+}
+
+table.results {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+}
+
+.results th,
+.results td {
+  padding: 10px 14px;
+  border: 1px solid #d9d9d9;
+  text-align: center;
+}
+
+/* Left-align the name and reg. no. columns */
+.results td:nth-child(2),
+.results td:nth-child(3),
+.results thead tr:nth-child(2) th:nth-child(2),
+.results thead tr:nth-child(2) th:nth-child(3) {
+  text-align: left;
+}
+
+/* Programme header row */
+.results th.programme {
+  background: var(--maroon);
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 14px;
+}
+
+/* Column header row */
+.results thead tr:nth-child(2) th {
+  background: #333333;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Zebra rows */
+.results tbody tr:nth-child(odd) {
+  background: #FFFFFF;
+}
+
+.results tbody tr:nth-child(even) {
+  background: #FFF8F4;
+}
+
+.results tbody tr:hover {
+  background: #ffeadb;
+}
+
+.results td:nth-child(6) {
+  font-weight: 700;
+}
+
+/* Low score (below 50) */
+.results td.low {
+  color: #c62828;
+  font-weight: 700;
+}
+
+/* ===== GRADE COLOUR-CODING ===== */
+.grade-A { background: #c8e6c9; color: #1b5e20; font-weight: 700; }
+.grade-B { background: #dcedc8; color: #33691e; font-weight: 700; }
+.grade-C { background: #fff3b0; color: #7a5b00; font-weight: 700; }
+.grade-D { background: #ffd9a8; color: #8a4500; font-weight: 700; }
+.grade-F { background: #f8c9c9; color: #b71c1c; font-weight: 700; }
+
+/* ===== FOOTER ROWS ===== */
+.results tfoot .average td {
+  background: #eeeeee;
+  font-weight: 700;
+}
+
+.results tfoot .average td:first-child {
+  text-align: right;
+}
+
+.grade-note {
+  margin-top: 14px;
+  font-size: 0.88rem;
+}
+
+.grade-note span {
+  display: inline-block;
+  padding: 2px 10px;
+  margin: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Screen-reader-only caption */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+@media (max-width: 640px) {
+  .meta-bar span { display: block; }
+  .meta-bar .divider { display: none; }
+  .results th, .results td { padding: 8px 10px; font-size: 0.88rem; }
+}
